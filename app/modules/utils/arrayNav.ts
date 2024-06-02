@@ -1,6 +1,10 @@
 const ArrayNav = () => {
     const itemNav = [
         {
+            name: 'Home',
+            url: '/'
+        },
+        {
             name: 'Ofertas',
             url: '/ofertas'
         },
