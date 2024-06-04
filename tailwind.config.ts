@@ -9,6 +9,13 @@ const config: Config = {
     "node_modules/flowbite-react/lib/esm/**/*.css", 
     'node_modules/preline/dist/*.js',
   ],
+  theme: {
+  extend: {
+      backgroundImage: {
+        'bgAyuda':"url('/assets/ayudaImg.png')",
+      },
+    },
+  },
 
   plugins: [
     require("daisyui"),

@@ -10,7 +10,7 @@ const ArrayNav = () => {
         },
         {
             name: 'Nuevos Ingresos!',
-            url: '/nuevos-ingresos'
+            url: '/nuevosIngresos'
         },
         {
             name: 'Ayuda',

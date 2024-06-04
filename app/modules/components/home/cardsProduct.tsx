@@ -1,5 +1,5 @@
 import React from 'react'
-
+// SE ESNCUENTRA EN NOSHOW PARA NO MOSTRARSE EN OFERTAS //
 const CardsProduct = () => {
     return (
         <>

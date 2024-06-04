@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import ArrayNav from '../utils/arrayNav';
+import ArrayNav from '../../utils/arrayNav';
 import Carousels from './carousels';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -34,7 +34,7 @@ const Navbar = () => {
                 <div className=" navbar-center hidden md:flex">
                     <ul className="menu  menu-horizontal  px-1">
                         {itemNav.map((item, index) => (
-                            <a key={index} className='text-lg text-gray-600 font-light border-b border-white cursor-pointer hover:border-b ms-8 me-8 hover:border-cyan-400 hover:text-cyan-500 mt-2' href={item.url}>{item.name}</a>
+                            <Link key={index} className='text-lg text-gray-600 font-light border-b border-white cursor-pointer hover:border-b ms-8 me-8 hover:border-cyan-400 hover:text-cyan-500 mt-2' href={item.url}>{item.name}</Link>
 
                         ))}
                     </ul>

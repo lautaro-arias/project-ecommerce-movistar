@@ -1,6 +1,7 @@
 import React from 'react'
 import CardsProduct from './cardsProduct'
-import ArraySideMenu from '../utils/arraySideMenu'
+import ArraySideMenu from '../../utils/arraySideMenu'
+import NoShow from './noShow';
 
 const SideMenu = () => {
     const { itemSideMenu } = ArraySideMenu();
@@ -31,13 +32,12 @@ const SideMenu = () => {
                                                     <span className="ml-4 text-lg"> {item.title}</span>
                                                 </a>
                                                     {item.options.map((item, index) => (
-                                                        <a className='m-2 btn  btn-ghost bg-slate-100  ml-4 font-light hover:text-cyan-600' key={index}>
+                                                        <a className='m-2 btn  btn-ghost bg-slate-200  ml-4 font-light hover:text-cyan-600' key={index}>
                                                             {item.name}
                                                         </a>
                                                     ))}
                                             </li>
                                         ))}
-                                       
                                     </ul>
                                 </nav>
                             </div>
@@ -45,7 +45,7 @@ const SideMenu = () => {
                         </div>
                     </div>
                 </div>
-                <CardsProduct />
+                <NoShow/>
             </div>
         </>
     )
