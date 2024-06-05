@@ -1,13 +1,12 @@
-import React from 'react'
-import CardsProduct from './cardsProduct'
-import ArraySideMenu from '../../utils/arraySideMenu'
+import React from 'react';
+import ArraySideMenu from '../../utils/arraySideMenu';
 import NoShow from './noShow';
 
 const SideMenu = () => {
     const { itemSideMenu } = ArraySideMenu();
     return (
         <>
-            <div className=" mt-12 md:ps-80 flex overflow-hidden bg-gray-100 rounded-lg">
+            <div className="  mt-12 2xl:ps-80 flex overflow-hidden bg-gray-100 rounded-lg">
                 <div className="hidden md:flex md:flex-shrink-0">
                     <div className="flex flex-col w-64">
                         <div className=" pb-2 flex flex-col flex-grow pt-5 overflow-y-auto bg-white border-r border-gray-50">
@@ -46,7 +45,7 @@ const SideMenu = () => {
                     </div>
                 </div>
                 <NoShow/>
-            </div>
+                </div>
         </>
     )
 }

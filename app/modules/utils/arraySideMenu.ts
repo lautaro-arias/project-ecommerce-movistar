@@ -13,7 +13,7 @@ const itemSideMenu = [
         {
             title: "Precio",
             options: [
-                {name:"$0 - $1.000.000"},{name:"$1.000.000 - $2.000.000"},{name:"$2.000.000 y superior"},
+                {name:"$0 - $100"},{name:"$100 - $500"},{name:"$500 y superior"},
             ],
         },
         {
