@@ -1,5 +1,5 @@
 import React from 'react'
-import Cart from '../modules/components/cart'
+import Cart from '../modules/components/cart/cart'
 
 const page = () => {
   return (

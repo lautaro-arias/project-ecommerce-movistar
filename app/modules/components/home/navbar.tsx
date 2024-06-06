@@ -1,14 +1,12 @@
-'use client'
 import React from 'react';
 import ArrayNav from '../../utils/arrayLinks';
-import Carousels from './carousels';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import Navlink from './navLink';
 
 const Navbar = () => {
+
     const { itemNav } = ArrayNav()
-    const pathname = usePathname()
+
     return (
         <>
             <div className="navbar  justify-center bg-white border-b border-gray-200 shadow-lg">

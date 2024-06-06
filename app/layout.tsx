@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./modules/components/home/navbar";
 import Footer from "./modules/components/home/footer";
+import { CartProvider } from "./modules/handlers/addCart";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-slate-100">
       <body className={inter.className}>
-        <Navbar/>
-        {children}
-        <Footer/>
+          <CartProvider>
+              <Navbar/>
+                {children}
+              <Footer/>
+          </CartProvider>
         </body>
     </html>
   );
