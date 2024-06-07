@@ -10,6 +10,10 @@ export interface CartContextProps {
     showCart                    :   boolean;
     handleClickRemoveProduct    :   (index: number) => void;
     modal                       :   boolean;
+    handleQuantityChange        :   (index: number, quantity: number) => void;
+    productQuantities           :   number[];
+    totalPrecios                :   number | any ;
+    sumarPrecios                :   number | any ;
     /*totalPrecios:  number | any ;
     sumarPrecios        :  number  ;
     productQuantities:  number | any ;

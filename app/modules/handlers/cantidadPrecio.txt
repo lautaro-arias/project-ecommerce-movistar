@@ -1,0 +1,39 @@
+
+<input
+type="number"
+defaultValue={1}
+value={productQuantities[index]} // > 0 ? productQuantities[index] : 1
+min={1}
+readOnly
+onChange={(e) => handleQuantityChange(index, parseInt(e.target.value))}
+className=" h-8 w-12  rounded border-gray-200 bg-gray-50 p-0 text-center text-xs text-gray-600 [-moz-appearance:_textfield] focus:border-white focus:bg-white focus:text-gray-900   focus:outline-none [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
+/>
+
+////Actualiza precio x cantiadad
+    const [productQuantities, setProductQuantities] = useState(addProductsCart.map(() => 1));
+    const handleQuantityChange = (index:number, newQuantity: number) => {
+        const newProductQuantities = [...productQuantities];
+        newProductQuantities[index] = newQuantity;
+        setProductQuantities(newProductQuantities);
+    };
+    //
+
+///Suma todos los precios con sus cantiadades
+        const sumarPrecios = (producto:any, cantidades:any) => {
+            const total = producto.reduce((acumulador:number, product:any, index:number) => {
+
+              return product.price * cantidades[index]  + acumulador - product.discountPercentage / 100 * product.price;
+
+            }, 0);
+        
+            return total;
+        };
+        console.log("sumarPrecios",sumarPrecios)
+        const totalPrecios = sumarPrecios(addProductsCart, productQuantities);
+        console.log("totalPrecios",totalPrecios)
+        //
+        useEffect(() => {
+            // Actualizar productQuantities cuando selectedProductsArray cambie
+            setProductQuantities(addProductsCart.map(() => 1));
+        }, [addProductsCart]);
+//////  

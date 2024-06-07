@@ -1,9 +1,10 @@
 'use client'
 import React from 'react'
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
 import CardsProduct from './cardsProduct';
-const NoShow = () => {
+import Navbar from './navbar';
+import Footer from './footer';
+export  const NoShow = () => {
     const pathname = usePathname()
   return (
     <> 
@@ -16,4 +17,28 @@ const NoShow = () => {
   )
 }
 
-export default NoShow
+export const NoShowNav = () => {
+    const pathname = usePathname()
+  return (
+    <> 
+    {pathname !== '/cart/pagos'  && (
+        <>
+        <Navbar />
+        </>
+    )}
+    </>
+  )
+}
+
+export const NoShowFooter = () => {
+  const pathname = usePathname()
+return (
+  <> 
+  {pathname !== '/cart/pagos'  && (
+      <>
+      <Footer />
+      </>
+  )}
+  </>
+)
+}
