@@ -35,7 +35,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
             }, 1000);
             setTimeout(() => {
                 setModal(false);
-            }, 2500);
+            }, 4000);
         }
     };
     ////

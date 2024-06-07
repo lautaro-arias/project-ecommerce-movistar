@@ -15,7 +15,7 @@ const Cart = () => {
   return (
     <>
       {showCart ? (
-        <div className='flex mx-auto justify-center pt-20 '>
+        <div className='flex mx-auto justify-center pt-40 '>
           <div className="mx-auto w-80 sm:w-96  md:w-6/12  xl:w-4/12  md:max-w-screen-xl px-4 bg-white py-4 sm:px-6 sm:py-12 lg:px-8">
             <div className="mx-auto max-w-3xl">
               <header className="text-center border-b border-gray-200">

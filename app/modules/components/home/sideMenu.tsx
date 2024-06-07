@@ -1,6 +1,6 @@
 import React from 'react';
 import ArraySideMenu from '../../utils/arraySideMenu';
-import NoShow from './noShow';
+import {NoShow} from './noShow';
 
 const SideMenu = () => {
     const { itemSideMenu } = ArraySideMenu();
