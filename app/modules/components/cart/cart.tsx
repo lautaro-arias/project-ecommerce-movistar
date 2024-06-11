@@ -6,12 +6,17 @@ import { useCart } from '../../handlers/addCart';
 import NoProducts from './noProducts';
 import ModalAddProduct from '../home/modalAddProduct';
 import Link from 'next/link';
+import ArraysImg from '../../utils/arraysImg';
 const Cart = () => {
   const {
     addProductsCart, showCart, handleClickRemoveProduct, handleClickAddOne,
     productQuantities, totalPrecios
   } = useCart();
 
+  const { arrayImg } = ArraysImg();
+  const { ids } = useCart();
+
+  const imgData = arrayImg.find(img => img.id === ids);
   return (
     <>
       {showCart ? (
@@ -28,7 +33,18 @@ const Cart = () => {
                   <div key={index}>
                     <ul className="space-y-4">
                       <li className="flex items-center gap-4">
-                        <Image src={celular1} alt="..." className="size-16 rounded object-cover" width={100} height={100} />
+                      {imgData ? (
+                          <div className=" ">
+                              <Image
+                                  width={100}
+                                  height={100}
+                                  className=" size-16 rounded object-cover"
+                                  src={imgData.img}
+                                  alt='celular'
+                              />
+                          </div>
+                        ) : null
+                    }
                         <div>
                           <h3 className="text-sm text-gray-900">{product.title}</h3>
                           <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">

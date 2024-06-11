@@ -14,6 +14,8 @@ export interface CartContextProps {
     productQuantities           :   number[];
     totalPrecios                :   number | any ;
     sumarPrecios                :   number | any ;
+    ids                         :   number ;    
+    handleClickId               :   (id: number) => void;
     /*totalPrecios:  number | any ;
     sumarPrecios        :  number  ;
     productQuantities:  number | any ;

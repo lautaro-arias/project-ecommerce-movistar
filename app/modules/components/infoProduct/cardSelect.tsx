@@ -6,25 +6,30 @@ import Image from 'next/image'
 import Caracteristicas from './caracteristicas';
 import { Products } from '../../model/productModel';
 import Link from 'next/link';
+import fechData from '../../handlers/fechData';
+import ArraysImg from '../../utils/arraysImg';
+import {CardImg} from '../home/cardImg';
+import NoProducts from '../cart/noProducts';
+
 
 
 const CardSelect = () => {
   const { selectedProductsArray, handleClickAddProductCart, handleClickAddOne} = useCart();
-
+  const { datas } = fechData();
+  const { arrayImg } = ArraysImg();
+  
   return (
     <>
-     <section>
+    { selectedProductsArray.length > 0 ? ( 
+      <>
+  <section>
   <div className="px-4 mt-12 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
     <div className="container lg:flex   items-center mx-auto max-w-7xl">
       <div className="w-full sm:ml-4 xl:ml-0 lg:max-w-lg lg:w-1/2 rounded-xl">
         <div>
           <div className="relative w-full rounded-lg max-w-lg">
             <div className="relative">
-              <Image
-                className="h-[450px] md:w-[500px] md:h-[500px] lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px] sm:mb-6 md:mb-8 lg:mb-12 xl:mb-0 object-cover border border-gray-200 object-center mx-auto rounded-lg shadow-2xl"
-                alt="hero"
-                src={celular4}
-              />
+              <CardImg/>
             </div>
           </div>
         </div>
@@ -83,6 +88,8 @@ const CardSelect = () => {
   </div>
 </section>
       <Caracteristicas />
+      </>
+    ) : <NoProducts />}
     </>
   )
 }

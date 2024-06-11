@@ -18,6 +18,8 @@ const CartContext = createContext<CartContextProps>(
         productQuantities: [],
         sumarPrecios: 0,
         totalPrecios: 0,
+        ids: 0,
+        handleClickId: () => {},
     }
 ); 
 //
@@ -99,6 +101,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     const handleClickShowProduct = (product:Products) => {
         setSelectedProductsArray([product]);
     };
+
+    const [ids,setIds] = useState<number>(0);
+    const handleClickId = (id:number) => {
+        setIds(id)
+    };
     /// 
     const contextValue: CartContextProps = {
         cartItemCount, 
@@ -113,7 +120,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         handleQuantityChange,
         productQuantities,
         sumarPrecios,
-        totalPrecios
+        totalPrecios,
+        ids,
+        handleClickId
     };
 
     return (

@@ -2,15 +2,22 @@ import React from 'react'
 import { useCart } from '../../handlers/addCart';
 import celular4 from '../../../../public/assets/celular8.webp'
 import Image from 'next/image'
+import { CardImg2 } from '../home/cardImg';
+import ArraysImg from '../../utils/arraysImg';
 
 const Caracteristicas = () => {
     const { selectedProductsArray } = useCart();
+    const { arrayImg } = ArraysImg();
+    const { ids } = useCart();
+
+    const imgData = arrayImg.find(img => img.id === ids);
     return (
         <>
             <section className="text-gray-600 body-font overflow-hidden">
                 <div className="container bg-white px-5 py-8 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                        <div className="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
+
+                        <div className="lg:w-1/2 mx-auto  w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
                             {selectedProductsArray.map((product, index) => (
                                 <>
                                     <h2 key={index} className="text-sm title-font text-gray-500 tracking-widest"></h2>
@@ -41,8 +48,10 @@ const Caracteristicas = () => {
                                     </div>
                                 </>
                             ))}
+                    <CardImg2/>
+
                         </div>
-                        <Image alt="ecommerce" className="h-[500px] md:w-[500px] md:h-[500px] lg:w-[400px] lg:h-[400px] xl:w-[450px] xl:h-[450px]  object-cover object-center rounded" src={celular4} />
+
                     </div>
                 </div>
             </section>
