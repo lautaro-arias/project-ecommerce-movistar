@@ -1,10 +1,10 @@
-import DataForm from '@/app/modules/components/cart/pagos/dataForm';
+import Render from '@/app/modules/components/cart/pagos/render';
 import React from 'react';
 
 const page = () => {
   return (
     <>
-    <DataForm/>
+    <Render/>
     </>
   )
 }

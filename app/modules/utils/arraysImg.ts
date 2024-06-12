@@ -36,8 +36,8 @@ const ArraysImg = () => {
 
     const arrayImg = [
         { id:121, img:iphone5,img2:iphone52},
-        { id:122, img:iphone6,img2:iphone62},
-        { id:123, img:iphone13,img2:iphone132},
+        { id:122, img:iphone62,img2:iphone6},
+        { id:123, img:iphone132,img2:iphone13},
         { id:124, img:iphoneX2,img2:iphoneX},
 
         { id:125, img:oppo2,img2:oppo},

@@ -1,7 +1,7 @@
 const ArrayNav = () => {
     const itemNav = [
         {   name: 'Home',url: '/'},
-        {   name: 'Ofertas',url: '/ofertas'},
+        {   name: 'Hogar',url: '/hogar'},
         {   name: 'Nuevos Ingresos!',url: '/nuevosIngresos'},
         {   name: 'Ayuda',url: '/ayuda'},
     ]

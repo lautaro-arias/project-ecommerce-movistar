@@ -1,9 +1,8 @@
 'use client'
 import React from 'react'
 import Filter from './filter';
-import fechData from '../../handlers/fechData';
+import { useData } from '../../handlers/fechData';
 import { useCart } from '../../handlers/addCart';
-import ModalAddProduct from './modalAddProduct';
 import ArraysImg from '../../utils/arraysImg';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -11,7 +10,7 @@ import Link from 'next/link';
 // SE ESNCUENTRA EN NOSHOW PARA NO MOSTRARSE EN OFERTAS //
 
 const CardsProduct = () => {
-    const { datas } = fechData();
+    const { datas, all } = useData();
     const { handleClickShowProduct, handleClickId } = useCart();
     const { arrayImg } = ArraysImg();
 
@@ -27,16 +26,15 @@ const CardsProduct = () => {
                         <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
                             <Filter />
                             <div className="py-4">
-
                                 <article className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
-                                    {datas.map((product: any, index: any) => {
+                                    {all.map((product: any, index: any) => {
                                         const imgData = arrayImg.find(img => img.id === product.id);
 
                                         return (
                                             <div key={index} className="bg-white rounded-md group block">
                                                 {imgData && (
                                                     <div className="relative h-[450px] md:h-[350px] overflow-hidden">
-                                                        <Link onClick={() => {handleClickShowProduct(product), handleClickId(product.id)}} href="/infoProduct">
+                                                        <Link onClick={() => { handleClickShowProduct(product), handleClickId(product.id) }} href="/infoProduct">
                                                             <Image
                                                                 width={900}
                                                                 height={900}
@@ -117,7 +115,6 @@ const CardsProduct = () => {
                     </div>
                 </main>
             </div>
-            <ModalAddProduct />
         </>
     )
 }

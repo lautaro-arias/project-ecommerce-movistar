@@ -16,7 +16,7 @@ const Info = () => {
             </h1>
             <p className="mb-8 leading-relaxed">Con Movistar, estar conectado nunca ha sido tan fácil y conveniente. ¡Te ofrecemos una línea móvil que se adapta a tus necesidades y te mantiene siempre en contacto con lo que más importa!</p>
             <div className="flex justify-center">
-              <button className="inline-flex text-white bg-sky-800 border-0 py-2 px-6 focus:outline-none hover:bg-sky-600 rounded text-lg">Quiero !</button>
+              <button className="inline-flex text-white mb-2 bg-sky-800 border-0 py-2 px-6 focus:outline-none hover:bg-sky-600 rounded text-lg">Quiero !</button>
             </div>
           </div>
         </div>

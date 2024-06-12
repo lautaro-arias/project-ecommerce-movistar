@@ -1,10 +1,9 @@
 'use client'
 import React from 'react'
 import Image from 'next/image';
-import celular1 from '../../../../public/assets/celular1.webp'
 import { useCart } from '../../handlers/addCart';
 import NoProducts from './noProducts';
-import ModalAddProduct from '../home/modalAddProduct';
+import ModalAddProduct from './modalAddProduct';
 import Link from 'next/link';
 import ArraysImg from '../../utils/arraysImg';
 const Cart = () => {

@@ -2,7 +2,7 @@
 import React from 'react'
 import { usePathname } from 'next/navigation';
 import CardsProduct from './cardsProduct';
-import Navbar from './navbar';
+import Navbar from './nav/navbar';
 import Footer from './footer';
 export  const NoShow = () => {
     const pathname = usePathname()

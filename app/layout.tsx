@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "./modules/handlers/addCart";
 import { NoShowFooter, NoShowNav } from "./modules/components/home/noShow";
+import { DataProvider } from "./modules/handlers/fechData";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,11 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-slate-100">
       <body className={inter.className}>
-          <CartProvider>
-                <NoShowNav/>
-                {children}
-                <NoShowFooter/>
-          </CartProvider>
+          <DataProvider> 
+              <CartProvider>
+                    <NoShowNav/>
+                    {children}
+                    <NoShowFooter/>
+              </CartProvider>
+          </DataProvider>
         </body>
     </html>
   );

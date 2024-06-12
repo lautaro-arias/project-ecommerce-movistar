@@ -1,7 +1,5 @@
 import React from 'react'
 import { useCart } from '../../handlers/addCart';
-import celular4 from '../../../../public/assets/celular8.webp'
-import Image from 'next/image'
 import { CardImg2 } from '../home/cardImg';
 import ArraysImg from '../../utils/arraysImg';
 

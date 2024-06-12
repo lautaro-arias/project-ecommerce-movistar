@@ -1,13 +1,8 @@
 'use client'
 import React from 'react';
 import { useCart } from '../../handlers/addCart';
-import celular4 from '../../../../public/assets/celular4.webp'
-import Image from 'next/image'
 import Caracteristicas from './caracteristicas';
-import { Products } from '../../model/productModel';
 import Link from 'next/link';
-import fechData from '../../handlers/fechData';
-import ArraysImg from '../../utils/arraysImg';
 import {CardImg} from '../home/cardImg';
 import NoProducts from '../cart/noProducts';
 
@@ -15,8 +10,6 @@ import NoProducts from '../cart/noProducts';
 
 const CardSelect = () => {
   const { selectedProductsArray, handleClickAddProductCart, handleClickAddOne} = useCart();
-  const { datas } = fechData();
-  const { arrayImg } = ArraysImg();
   
   return (
     <>
