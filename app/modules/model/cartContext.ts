@@ -16,14 +16,4 @@ export interface CartContextProps {
     sumarPrecios                :   number | any ;
     ids                         :   number ;    
     handleClickId               :   (id: number) => void;
-    /*totalPrecios:  number | any ;
-    sumarPrecios        :  number  ;
-    productQuantities:  number | any ;
-    handleQuantityChange: number| any;
-    handleClickRemoveProduct: any;
-    cartItemCount: number;
-    setShowOffCanvas: (value: boolean) => void;
-    showOffCanvas: boolean;
-    handleClickShow: () => void;
-    ;*/
 }

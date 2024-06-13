@@ -4,7 +4,7 @@ import "./globals.css";
 import { CartProvider } from "./modules/handlers/addCart";
 import { NoShowFooter, NoShowNav } from "./modules/components/home/noShow";
 import { DataProvider } from "./modules/handlers/fechData";
-
+import { FormProvider } from "./modules/handlers/form";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,9 +22,11 @@ export default function RootLayout({
       <body className={inter.className}>
           <DataProvider> 
               <CartProvider>
-                    <NoShowNav/>
-                    {children}
-                    <NoShowFooter/>
+                    <FormProvider>
+                        <NoShowNav/>
+                          {children}
+                        <NoShowFooter/>
+                    </FormProvider>
               </CartProvider>
           </DataProvider>
         </body>

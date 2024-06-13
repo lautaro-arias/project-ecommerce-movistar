@@ -1,9 +1,33 @@
+'use client'
 import React from 'react'
 import celular1 from '../../../../../public/assets/celular1.webp'
 import Image from 'next/image'
+import { useForm } from '@/app/modules/handlers/form'
+import ArraysImg from '@/app/modules/utils/arraysImg'
+import { useCart } from '@/app/modules/handlers/addCart'
 
 const Pago = () => {
+  const { formData} = useForm()
+  //Img selecionada
+  const { arrayImg } = ArraysImg();
+  const { ids } = useCart();
+
+  const imgData = arrayImg.find(img => img.id === ids);
+  //
+  
   return (
+    <>
+    <div className="flex justify-center mt-10 text-center">
+            <div className=' justify-center text-xl'>
+              <span className='bg-gray-300 px-2 md:px-4 md:py-2 me-2 rounded-full text-white'>1</span>Ingresá tus datos
+            </div>
+            <span className=''>
+              <svg xmlns="http://www.w3.org/2000/svg" height="60px" viewBox="0 -960 960 960" width="100px" fill="#666666"><path d="M249-744v-15h462v15H249Z" /></svg>
+            </span>
+            <div className=' justify-center md:text-xl'>
+              <span className='bg-sky-400 text-xl px-4 py-2 md:px-6 md:py-4 me-2 rounded-full text-white'>2</span>Aboná tu equipo
+            </div>
+          </div>
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto flex flex-col">
         <div className="lg:w-4/6 mx-auto">
@@ -39,26 +63,69 @@ const Pago = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                   </summary>
-                  <p className="mt-4 px-4 leading-relaxed ">
-                    hola
-                  </p>
+                  <div className="mt-4 px-4 bg-sky-700 leading-relaxed ">
+                  </div>
                 </details>
               </div>
             </div>
-            <div className=" mt-8 md:mt-0 sm:w-1/3 text-center sm:pr-8 sm:py-8">
+            <div className="  border-dotted  mt-8 md:mt-0 sm:w-1/3 text-center sm:pr-8 sm:py-8">
               <div className=" rounded-full inline-flex items-center justify-center ">
-                <Image className="w-60 h-60 border rounded-lg" src={celular1} alt="" />
+              {imgData ? (
+                          <div className=" ">
+                              <Image
+                                  width={800}
+                                  height={800}
+                                  className=" md:size-50 rounded object-cover"
+                                  src={imgData.img}
+                                  alt='celular'
+                              />
+                          </div>
+                        ) : null
+                    }
               </div>
-              <div className="flex flex-col items-center text-center justify-center">
-                <h2 className="font-medium title-font mt-4 text-gray-900 text-lg">Phoebe Caulfield</h2>
-                <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4"></div>
-                <p className="text-base">Raclette knausgaard hella meggs normcore williamsburg enamel pin sartorial venmo tbh hot chicken gentrify portland.</p>
+              <div className="flex  flex-col bg-sky-900 items-center text-center justify-center">
+                <h2 className="font-medium title-font mt-4 text-gray-100 text-lg">Tus datos </h2>
+                <div className="w-20 h-1 bg-white rounded mt-2 mb-4"></div>
+                <div className="text-base ">
+                    <div className='inline-flex '>
+                    <span className='text-white me-1 font-light text-sm'>{formData.nombre}</span>
+                    <span className='text-white font-light text-sm'> {formData.apellido}</span>
+                  </div>
+                  <div className="flex-wrap ">
+                    <span className='text-gray-900 font-bold text-sm'>Contacto</span>
+                    <ul> 
+                    <li className='text-white font-light text-sm'>{formData.email}</li>
+                    <li className='text-white font-light text-sm'>{formData.celular}</li>
+                    </ul>
+                  </div>
+                  { formData.checkboxFormEnvio ? ( 
+                      <div className="flex-wrap ">
+                      <span className='text-gray-900 font-bold text-sm'>Envio {formData.checkboxFormEnvio ? "gratis" : ""}</span>
+                        <ul>
+                          <li className='text-white font-light text-sm'>{formData.provincia}</li>
+                          <li className='text-white font-light text-sm'>{formData.localidad}</li>
+                          <li className='text-white font-light text-sm'>{formData.calle}</li>
+                          <li className='text-white font-light text-sm'>{formData.altura}</li>
+                        </ul>
+                      </div>
+                    ) : <div className="flex-wrap  ">
+                        <span className='text-gray-900 font-bold text-sm'>Retiro en la sucursal</span>
+                        <ul>
+                          <li className='text-white font-light text-sm'>Bueno aires</li>
+                          <li className='text-white font-light text-sm'>La plata</li>
+                          <li className='text-white font-light text-sm'>avenida siempre viva</li>
+                          <li className='text-white font-light text-sm'>742</li>
+                        </ul>
+                      </div>
+                  }
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    </>
   )
 }
 

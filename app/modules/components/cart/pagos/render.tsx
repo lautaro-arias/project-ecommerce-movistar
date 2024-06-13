@@ -1,8 +1,8 @@
 'use client'
-import useForm from '@/app/modules/handlers/form'
 import React from 'react'
 import DataForm from './dataForm'
 import Pago from './pago'
+import { useForm } from '@/app/modules/handlers/form'
 
 const Render = () => {
     const { isReadyShow } = useForm()

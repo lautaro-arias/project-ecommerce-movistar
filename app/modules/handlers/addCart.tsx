@@ -1,5 +1,5 @@
 'use client'
-import { ReactNode, createContext,useContext, useEffect, useState } from 'react'
+import { ReactNode, createContext,useContext, useEffect, useState,useRef } from 'react'
 import { CartContextProps } from '../model/cartContext';
 import { Products } from '../model/productModel';
 
@@ -107,6 +107,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         setIds(id)
     };
     /// 
+
     const contextValue: CartContextProps = {
         cartItemCount, 
         handleClickAddOne,
@@ -122,7 +123,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         sumarPrecios,
         totalPrecios,
         ids,
-        handleClickId
+        handleClickId,
+        
     };
 
     return (
