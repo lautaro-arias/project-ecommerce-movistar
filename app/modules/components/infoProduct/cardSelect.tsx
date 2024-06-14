@@ -9,7 +9,7 @@ import NoProducts from '../cart/noProducts';
 
 
 const CardSelect = () => {
-  const { selectedProductsArray, handleClickAddProductCart, handleClickAddOne} = useCart();
+  const { selectedProductsArray, handleClickAddProductCart, handleClickAddOne,handleClickId} = useCart();
   
   return (
     <>
@@ -59,6 +59,7 @@ const CardSelect = () => {
                 onClick={() => {
                   handleClickAddOne(true);
                   handleClickAddProductCart(product);
+                  handleClickId(product.id)
                 }}
                 className="justify-center mt-2 border hover:scale-95 duration-300 relative group cursor-pointer text-sky-50 overflow-hidden h-12 w-64 md:w-96 rounded-md bg-sky-200 p-2 flex items-center font-extrabold"
               >

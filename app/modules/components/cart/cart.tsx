@@ -8,13 +8,11 @@ import Link from 'next/link';
 import ArraysImg from '../../utils/arraysImg';
 const Cart = () => {
   const {
-    addProductsCart, showCart, handleClickRemoveProduct, handleClickAddOne,
+    ids, addProductsCart, showCart, handleClickRemoveProduct, handleClickAddOne,
     productQuantities, totalPrecios
   } = useCart();
 
   const { arrayImg } = ArraysImg();
-  const { ids } = useCart();
-
   const imgData = arrayImg.find(img => img.id === ids);
   return (
     <>

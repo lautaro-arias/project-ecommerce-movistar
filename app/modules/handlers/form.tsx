@@ -27,16 +27,21 @@ const FormContext = createContext<FormContextProps>({
   handleSubmit: () => {},
   handleCheckboxChange:() => {},
   handleChange: () => {},
+  handleClick:() => {},
+  handleClickPago:() => {},
+  isPago: false
   
 })
 export const FormProvider = ({ children }: { children: ReactNode }) => {
   // validated: valida si el formulario esta bien +
   // isReadyShow: valida si hay un check marcado antes de ir a pago
   // value : validacion visual usuario, si el input contiene caracteres//
+  //isPago: valida si el usuario ya ha pagado
   const [validated, setValidated] = useState(false);
   const [isReadyShow, setIsReadyShow] = useState(false);
   const [value, setValue] = useState('');
-
+  const [isPago, setIsPago] = useState(false);
+  
   //alamcenamos los datos de los refs
   const [formData, setFormData] = useState({
     email: '',nombre: '',apellido: '',dni: '',celular: '',calle: '',altura: '',piso: '',
@@ -62,8 +67,12 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
   //
 
   // verifica que los inputs no esten vacios o esten en el formato correcto
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
   };
   //
 
@@ -110,7 +119,7 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
   ///
 
   //  desactiva un check si el otro esta activo y viseversa
-  const handleCheckboxChange = (checkboxType: boolean |  boolean) => {
+  const handleCheckboxChange = (checkboxType: boolean ) => {
     if (checkboxType === true) {
       // si es true checkboxFormEnvioRef
       if (checkboxFormEnvioRef.current) {
@@ -131,6 +140,18 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
   };
   ///
 
+  // para volder de pago a formulario de datos
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) =>{
+    e.preventDefault();
+    setIsReadyShow(false);
+  }
+  //
+
+  const handleClickPago = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setIsPago(preev => !preev);
+    console.log(isPago)
+  }
   
 
   const contextValue: FormContextProps = {
@@ -154,7 +175,10 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     formData,
     handleSubmit,
     handleCheckboxChange,
-    handleChange
+    handleChange,
+    handleClick,
+    handleClickPago,
+    isPago
   };
 
   return (
