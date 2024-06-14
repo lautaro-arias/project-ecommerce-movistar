@@ -1,21 +1,8 @@
 'use client'
-import React from 'react'
+import React from 'react';
 import { usePathname } from 'next/navigation';
-import CardsProduct from './cardsProduct';
 import Navbar from './nav/navbar';
 import Footer from './footer';
-export  const NoShow = () => {
-    const pathname = usePathname()
-  return (
-    <> 
-    {pathname !== '/ofertas'  && (
-        <>
-        <CardsProduct />
-        </>
-    )}
-    </>
-  )
-}
 
 export const NoShowNav = () => {
     const pathname = usePathname()

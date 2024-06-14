@@ -16,7 +16,6 @@ export interface FormContextProps {
     checkboxFormRetiroRef: React.RefObject<HTMLInputElement>;
     validated: boolean;
     isReadyShow: boolean;
-    value: string | number | any;
     formData: {
         email: string;
         nombre: string;
@@ -35,9 +34,8 @@ export interface FormContextProps {
     };
     handleSubmit: (event: React.FormEvent) => void;
     handleCheckboxChange: (checkboxType: boolean |  boolean) => void;
-    handleChange:(event: React.ChangeEvent<HTMLInputElement>) => void;
     handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
-    handleClickPago: (e:React.MouseEvent<HTMLButtonElement>) => void;
+    handleClickPago: (e: React.MouseEvent<HTMLButtonElement>) => void;
     isPago : boolean;
 
 }
