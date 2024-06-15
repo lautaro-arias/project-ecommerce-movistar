@@ -5,27 +5,27 @@ import Navbar from './nav/navbar';
 import Footer from './footer';
 
 export const NoShowNav = () => {
-    const pathname = usePathname()
+  const pathname = usePathname()
   return (
-    <> 
-    {pathname !== '/cart/pagos'  && (
+    <>
+      {pathname !== '/cart/pagos' && (
         <>
-        <Navbar />
+          <Navbar />
         </>
-    )}
+      )}
     </>
   )
 }
 
 export const NoShowFooter = () => {
   const pathname = usePathname()
-return (
-  <> 
-  {pathname !== '/cart/pagos'  && (
-      <>
-      <Footer />
-      </>
-  )}
-  </>
-)
+  return (
+    <>
+      {pathname !== '/cart/pagos' && (
+        <>
+          <Footer />
+        </>
+      )}
+    </>
+  )
 }

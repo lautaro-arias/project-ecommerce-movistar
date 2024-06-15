@@ -1,10 +1,10 @@
 import Link from 'next/link';
-import React from 'react'
+import React from 'react';
 
 const NoProducts = () => {
     return (
         <section>
-            <div className=" relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">
+            <div className="  animate__animated animate__fadeIn  animate__delay-800s relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-16 max-w-7xl lg:py-24">
                 <div className="bg-gray-50 py-12 flex w-full mx-auto text-left">
                     <div className="relative inline-flex items-center mx-auto align-middle">
                         <div className="text-center">
@@ -17,7 +17,7 @@ const NoProducts = () => {
                                     <Link href="/" className=" text-xs px-5 py-4 md:text-base font-medium text-center  text-white transition duration-500 ease-in-out transform bg-sky-800 lg:px-10 rounded-xl hover:bg-sky-600  focus:outline-none focus:ring-2 shadow-lg focus:ring-offset-2 focus:ring-blue-500">Ver productos</Link>
                                 </div>
                                 <div className="mt-4 rounded-lg sm:mt-4 sm:ml-3">
-                                    <Link  href="/nuevosIngresos" className="text-xs items-center block px-5 lg:px-10 py-3.5 md:text-base font-medium text-center text-sky-700  bg-white hover:shadow-xl transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">Ver nuevos ingresos</Link>
+                                    <Link href="/nuevosIngresos" className="text-xs items-center block px-5 lg:px-10 py-3.5 md:text-base font-medium text-center text-sky-700  bg-white hover:shadow-xl transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">Ver nuevos ingresos</Link>
                                 </div>
                             </div>
                         </div>

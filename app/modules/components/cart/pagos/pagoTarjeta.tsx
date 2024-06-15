@@ -1,13 +1,13 @@
 'use client'
-import { useForm } from '@/app/modules/handlers/form'
-import React from 'react'
+import { useForm } from '@/app/modules/handlers/form';
+import React from 'react';
 
 const PagoTarjeta = () => {
-    const { handleClickPago} = useForm()
+    const { handleClickPago } = useForm()
 
     return (
         <section className=" px-2 py-2 shadow-xl rounded-lg border-2  bg-gradient-to-l from-slate-300 to-slate-100  ">
-            <form  className="form">
+            <form className="form">
                 <div className='flex flex-wrap justify-center pt-2 md:inline-flex'>
                     <div className="mx-auto mt-4 md:ml-4 md:me-4 mb-3  ">
                         <label htmlFor="nombre" className='rounded-xl py-1 relative block  bg-white border border-sky-200 shadow-lg focus-within:shadow-xl focus-within:shadow-sky-200 focus-within:border-sky-600 focus-within:ring-1 focus-within:ring-sky-600'>
@@ -79,11 +79,11 @@ const PagoTarjeta = () => {
                         </label>
                     </div>
                 </div>
-                    <div className="flex justify-center mt-8">
-                        <button onClick={handleClickPago} className=" h-10 rounded-full shadow-md bg-sky-400 w-56 hover:bg-gradient-to-l hover:from-sky-300 hover:to-sky-100 border-2 border-white text-white font-light">
-                            Comprar
-                        </button>
-                    </div>
+                <div className="flex justify-center mt-8">
+                    <button onClick={handleClickPago} className=" h-10 rounded-full shadow-md bg-sky-400 w-56 hover:bg-gradient-to-l hover:from-sky-300 hover:to-sky-100 border-2 border-white text-white font-light">
+                        Comprar
+                    </button>
+                </div>
             </form>
         </section>
 

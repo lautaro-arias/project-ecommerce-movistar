@@ -1,5 +1,5 @@
 'use client'
-import React,{createContext, useContext,useState,useRef, ReactNode} from 'react'
+import React, { createContext, useContext, useState, useRef, ReactNode } from 'react';
 import { FormContextProps } from '../model/formContext';
 
 const FormContext = createContext<FormContextProps>({
@@ -19,16 +19,17 @@ const FormContext = createContext<FormContextProps>({
   checkboxFormRetiroRef: { current: null },
   validated: false,
   isReadyShow: false,
-  formData: { email: "",nombre: "",apellido: "",dni: "",celular: "",calle: "",altura: "",
-              piso: "",departamento: "",localidad: "",provincia: "",codigoPostal: "",
-              checkboxFormEnvio: false,checkboxFormRetiro: false,
-            },
-  handleSubmit: () => {},
-  handleCheckboxChange:() => {},
-  handleClick:() => {},
-  handleClickPago:() => {},
+  formData: {
+    email: "", nombre: "", apellido: "", dni: "", celular: "", calle: "", altura: "",
+    piso: "", departamento: "", localidad: "", provincia: "", codigoPostal: "",
+    checkboxFormEnvio: false, checkboxFormRetiro: false,
+  },
+  handleSubmit: () => { },
+  handleCheckboxChange: () => { },
+  handleClick: () => { },
+  handleClickPago: () => { },
   isPago: false
-  
+
 })
 export const FormProvider = ({ children }: { children: ReactNode }) => {
   // validated: valida si el formulario esta bien +
@@ -37,15 +38,16 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
   const [validated, setValidated] = useState(false);
   const [isReadyShow, setIsReadyShow] = useState(false);
   const [isPago, setIsPago] = useState(false);
-  
+
   //alamcenamos los datos de los refs
   const [formData, setFormData] = useState({
-    email: '',nombre: '',apellido: '',dni: '',celular: '',calle: '',altura: '',piso: '',
-    departamento: '',localidad: '',provincia: '',codigoPostal: '',checkboxFormEnvio: false,checkboxFormRetiro: false,
+    email: '', nombre: '', apellido: '', dni: '', celular: '', calle: '', altura: '', piso: '',
+    departamento: '', localidad: '', provincia: '', codigoPostal: '', checkboxFormEnvio: false, checkboxFormRetiro: false,
   });
   //
 
-  //inicializacion de refs
+  //inicializacion de refs //USAMOS REF PARA NO USAR EL ONCHANGE
+  //primera ves usando el ref
   const emailRef = useRef<HTMLInputElement>(null);
   const nombreRef = useRef<HTMLInputElement>(null);
   const apellidoRef = useRef<HTMLInputElement>(null);
@@ -62,7 +64,6 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
   const checkboxFormRetiroRef = useRef<HTMLInputElement>(null);
   //
 
-  // verifica que los inputs no esten vacios o esten en el formato correcto
 
 
   // obtenermos los datos de los ref , los guardamos y validamos el formulario
@@ -70,46 +71,45 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     event.preventDefault();
 
     const data = {
-      email: emailRef.current?.value       || '', nombre: nombreRef.current?.value || '',
+      email: emailRef.current?.value || '', nombre: nombreRef.current?.value || '',
       apellido: apellidoRef.current?.value || '', dni: dniRef.current?.value || '',
-      celular: celularRef.current?.value    || '', calle: calleRef.current?.value || '',
-      altura: alturaRef.current?.value      || '', piso: pisoRef.current?.value || '',
-      departamento: departamentoRef.current?.value || '',localidad: localidadRef.current?.value || '',
-      provincia: provinciaRef.current?.value || '',   codigoPostal: codigoPostalRef.current?.value || '',
+      celular: celularRef.current?.value || '', calle: calleRef.current?.value || '',
+      altura: alturaRef.current?.value || '', piso: pisoRef.current?.value || '',
+      departamento: departamentoRef.current?.value || '', localidad: localidadRef.current?.value || '',
+      provincia: provinciaRef.current?.value || '', codigoPostal: codigoPostalRef.current?.value || '',
       checkboxFormEnvio: checkboxFormEnvioRef.current?.checked || false, checkboxFormRetiro: checkboxFormRetiroRef.current?.checked || false,
     };
 
-   
+
     try {
       // Validar si al menos un checkbox esta marcado
       const isAnyCheckboxChecked = checkboxFormEnvioRef.current?.checked || checkboxFormRetiroRef.current?.checked;
       //
       // validar si el formulario esta completo
-      const completo = 
+      const completo =
         data.email !== '' && data.nombre !== '' && data.apellido !== '' && data.dni !== '' && data.celular !== '' &&
-        data.calle !== '' && data.altura !== '' && data.localidad !== '' && data.provincia !== '' && data.codigoPostal !== '' 
-        //
-        if(completo && isAnyCheckboxChecked){
-          setValidated(true);
-          setIsReadyShow(true);
-          setFormData(data);
-            
+        data.calle !== '' && data.altura !== '' && data.localidad !== '' && data.provincia !== '' && data.codigoPostal !== ''
+      //
+      if (completo && isAnyCheckboxChecked) {
+        setValidated(true);
+        setIsReadyShow(true);
+        setFormData(data);
 
-        }else{
-          setIsReadyShow(false);
-          setValidated(false);
-          console.log("debe completar todos los campos");
-        }
-        
+
+      } else {
+        setIsReadyShow(false);
+        setValidated(false);
+        console.log("debe completar todos los campos");
+      }
+
     } catch (error) {
       console.log("error al enviar los datos:", error);
     }
-   
   };
   ///
 
   //  desactiva un check si el otro esta activo y viseversa
-  const handleCheckboxChange = (checkboxType: boolean ) => {
+  const handleCheckboxChange = (checkboxType: boolean) => {
     if (checkboxType === true) {
       // si es true checkboxFormEnvioRef
       if (checkboxFormEnvioRef.current) {
@@ -131,20 +131,20 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
   ///
 
   // para volder de pago a formulario de datos
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) =>{
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     setIsReadyShow(false);
   }
   //
 
   const handleClickPago = (e: React.MouseEvent<HTMLButtonElement>) => {
-      setIsPago(true);  
-      setTimeout(() => {
-        window.location.reload();
-      },5000)
-    
+    setIsPago(true);
+    setTimeout(() => {
+      window.location.reload();
+    }, 5000)
+
   }
-  
+
 
   const contextValue: FormContextProps = {
     emailRef,

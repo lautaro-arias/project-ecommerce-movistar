@@ -1,6 +1,6 @@
-import React from 'react'
-import mercadoPago from '@/public/assets/mercadoPago.png'
-import Image from 'next/image'
+import React from 'react';
+import mercadoPago from '@/public/assets/mercadoPago.png';
+import Image from 'next/image';
 
 const PagoMercado = () => {
     return (
@@ -10,11 +10,11 @@ const PagoMercado = () => {
             </div>
             <div className="col-span-6  text-sm rounded-md">
                 <p>
-                A continuacion te llevaremos a Mercado Pago <br />
-                para que puedas elejir como pagar tu compra<br />
-                podes hacerlo con dinero en la cuenta ,con tarjeta
+                    A continuacion te llevaremos a Mercado Pago <br />
+                    para que puedas elejir como pagar tu compra<br />
+                    podes hacerlo con dinero en la cuenta ,con tarjeta
                 </p>
-             </div>
+            </div>
             <div className="col-span-1">
                 <button className="rounded-md bg-sky-400 hover:bg-slate-600 hover:text-slate-200 duration-300 p-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className=" text-white feather feather-external-link">

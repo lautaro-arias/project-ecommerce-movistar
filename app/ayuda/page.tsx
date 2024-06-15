@@ -1,12 +1,11 @@
-import React from 'react'
-import Banner from '../modules/components/ayuda/banner'
+import React from 'react';
+import Banner from '../modules/components/ayuda/banner';
 
 const page = () => {
   return (
     <>
-    <Banner/>
+      <Banner />
     </>
   )
 }
-
 export default page;

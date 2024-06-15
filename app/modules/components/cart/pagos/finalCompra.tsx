@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const FinalCompra = () => {
 
@@ -27,5 +27,4 @@ const FinalCompra = () => {
         </>
     )
 }
-
-export default FinalCompra
+export default FinalCompra;

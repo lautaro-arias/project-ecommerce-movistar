@@ -1,5 +1,5 @@
-import React from 'react'
-import CardSelect from '../modules/components/infoProduct/cardSelect'
+import React from 'react';
+import CardSelect from '../modules/components/infoProduct/cardSelect';
 
 const page = () => {
   return (
@@ -8,5 +8,4 @@ const page = () => {
     </>
   )
 }
-
-export default page
+export default page;

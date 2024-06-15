@@ -1,7 +1,7 @@
-import { Suspense } from 'react';
 import Carousels from './modules/components/home/carousels';
 import SideMenu from './modules/components/home/sideMenu';
-import CardsProduct from './modules/components/home/cardsProduct';
+import 'animate.css/animate.min.css';
+
 export default function Home() {
   return (
     <>

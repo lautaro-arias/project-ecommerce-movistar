@@ -1,12 +1,11 @@
-import React from 'react'
-import celular1 from '../../../public/assets/celular1.webp'
-import celular2 from '../../../public/assets/celular2.webp'
-import celular3 from '../../../public/assets/celular3.webp'
-import celular4 from '../../../public/assets/celular4.webp'
-import celular5 from '../../../public/assets/celular5.webp'
-import celular6 from '../../../public/assets/celular6.webp'
-import celular7 from '../../../public/assets/celular7.webp'
-import celular8 from '../../../public/assets/celular8.webp'
+import celular1 from '../../../public/assets/celular1.webp';
+import celular2 from '../../../public/assets/celular2.webp';
+import celular3 from '../../../public/assets/celular3.webp';
+import celular4 from '../../../public/assets/celular4.webp';
+import celular5 from '../../../public/assets/celular5.webp';
+import celular6 from '../../../public/assets/celular6.webp';
+import celular7 from '../../../public/assets/celular7.webp';
+import celular8 from '../../../public/assets/celular8.webp';
 
 const dataPhone = [
     {   img:celular1,name: 'Samsung A4',description: 'El Samsung A4 combina un diseño elegante con un rendimiento eficiente, ideal para tus tareas diarias.',fecha:" En stock agosto 14, 2024"},

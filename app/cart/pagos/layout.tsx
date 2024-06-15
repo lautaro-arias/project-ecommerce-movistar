@@ -6,7 +6,7 @@ const Layout = ({ children }: Readonly<{ children: React.ReactNode; }>) => {
     return (
         <>
             <Nav />
-            {children}
+                {children}
             <Footer />
         </>
     )

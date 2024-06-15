@@ -14,7 +14,7 @@ const CardSelect = () => {
       {selectedProductsArray.length > 0 ? (
         <>
           <section>
-            <div className="px-4 mt-12 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
+            <div className={` ${selectedProductsArray.length > 0 ? ' animate__animated animate__fadeIn  animate__delay-800s' : ''} px-4 mt-12 py-12 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24`}>
               <div className=" lg:bg-white container lg:flex   items-center mx-auto max-w-7xl">
                 <div className="w-full sm:ml-4 xl:ml-0 lg:max-w-lg lg:w-1/2 rounded-xl">
                   <div>

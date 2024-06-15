@@ -1,8 +1,7 @@
-import ArraySvg from '../utils/arraySvg'
+import ArraySvg from '../utils/arraySvg';
 const ArraySideMenu = () => {
     const { svg } = ArraySvg();
-
-
+    
 const itemSideMenu = [
         {
             title: "Marca",

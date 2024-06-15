@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import arrayFooter from '../../utils/arrayFooter';
 const Footer = () => {
     const { footerItems } = arrayFooter();

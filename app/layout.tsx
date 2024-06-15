@@ -5,6 +5,8 @@ import { CartProvider } from "./modules/handlers/addCart";
 import { NoShowFooter, NoShowNav } from "./modules/components/home/noShow";
 import { DataProvider } from "./modules/handlers/fechData";
 import { FormProvider } from "./modules/handlers/form";
+import 'animate.css/animate.min.css';
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

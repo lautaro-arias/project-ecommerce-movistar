@@ -1,12 +1,12 @@
 'use client'
-import React from 'react'
-import Image from 'next/image'
-import { useForm } from '@/app/modules/handlers/form'
-import ArraysImg from '@/app/modules/utils/arraysImg'
-import { useCart } from '@/app/modules/handlers/addCart'
-import PagoTarjeta from './pagoTarjeta'
-import PagoMercado from './pagoMercado'
-import FinalCompra from './finalCompra'
+import React from 'react';
+import Image from 'next/image';
+import { useForm } from '@/app/modules/handlers/form';
+import ArraysImg from '@/app/modules/utils/arraysImg';
+import { useCart } from '@/app/modules/handlers/addCart';
+import PagoTarjeta from './pagoTarjeta';
+import PagoMercado from './pagoMercado';
+import FinalCompra from './finalCompra';
 
 const Pago = () => {
   const { formData, handleClick, isPago } = useForm()

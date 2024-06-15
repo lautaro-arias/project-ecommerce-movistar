@@ -4,12 +4,11 @@ import c3 from '../../../../public/assets/cd3.jpg';
 import c4 from '../../../../public/assets/cd4.jpg';
 import React from 'react';
 import Image from 'next/image';
-import SideMenu from "./sideMenu";
 
 const Carousels = () => {
   return (
     <>
-      <div className="carousel flex h-40 md:h-56 w-full  mx-auto ">
+      <div className=" flex h-40 md:h-56 w-full  mx-auto ">
         <div id="slide1" className="carousel-item relative w-full carousel-inner">
           <Image className=" md:px-40 w-full   md:h-56" width={1000} height={1000} src={c1} alt="..." />
         </div>

@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import ArraysImg from '../../utils/arraysImg';
 import { useCart } from '../../handlers/addCart';
-import { usePathname } from 'next/navigation'
+import { usePathname } from 'next/navigation';
 
 export const CardImg = () => {
     const { arrayImg } = ArraysImg();

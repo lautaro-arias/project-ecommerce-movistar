@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React from 'react';
 import Filter from './filter';
 import { useData } from '../../handlers/fechData';
 import { useCart } from '../../handlers/addCart';
@@ -30,7 +30,7 @@ const CardsProduct = () => {
                                         <SuspenseCard />
                                     </>
                                 ) : (
-                                    <article className='  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+                                    <article className=' animate__animated animate__fadeIn grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
                                         {all.map((product: any, index: any) => {
                                             const imgData = arrayImg.find(img => img.id === product.id);
                                             return (

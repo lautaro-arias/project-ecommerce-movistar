@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React from 'react';
 import { useCart } from '@/app/modules/handlers/addCart';
 import NoProducts from '../noProducts';
 import { useForm } from '@/app/modules/handlers/form';
@@ -9,7 +9,7 @@ const DataForm = () => {
   const {
     handleSubmit, emailRef, nombreRef, apellidoRef, dniRef, celularRef,
     calleRef, alturaRef, pisoRef, departamentoRef, localidadRef, provinciaRef,
-    codigoPostalRef, checkboxFormEnvioRef, checkboxFormRetiroRef, handleCheckboxChange, 
+    codigoPostalRef, checkboxFormEnvioRef, checkboxFormRetiroRef, handleCheckboxChange,
   } = useForm();
 
   return (
@@ -30,12 +30,12 @@ const DataForm = () => {
           <form method="POST" action="#" className='flex   justify-center mx-auto   md:py-20' onSubmit={handleSubmit}>
             <div className="mt-4  mx-auto w-96 lg:w-6/12 bg-sky-950 rounded-lg p-12 shadow-sm">
               <h2 className="text-white font-bold text-md">Datos personales</h2>
-              <div className=" has-validation inline-flex mt-4 me-4 mb-3  ">
+              <div className=" has-validation flex mt-4 me-4 mb-3  ">
                 <label
                   htmlFor="email"
                   className='relative block rounded-md border  border-gray-200 shadow-sm focus-within:border-sky-600 focus-within:ring-1 focus-within:ring-sky-600'
                 >
-                  <input className="rounded-md pt-4 bg-white peer border-none text-dark placeholder-transparent focus:outline-none focus:ring-0 focus:shadow-none"
+                  <input className="text-start rounded-md pt-4 bg-white peer border-none text-dark placeholder-transparent focus:outline-none focus:ring-0 focus:shadow-none"
                     type="email"
                     id="email"
                     placeholder='email'
@@ -244,17 +244,17 @@ const DataForm = () => {
               </div>
               <h4 className="text-white font-bold pt-8 text-md">Envio / Retiro</h4>
               <div className="space-y-4 pt-4">
-                  <div className="inline-flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
-                    <h2 className="font-medium">Envio a domicilio</h2>
-                    <label htmlFor="checkboxForm" className="relative flex items-center">
-                      <input className=" cursor-pointer size-4 rounded border-gray-300"
-                        type="checkbox"
-                        id="checkboxForm"
-                        ref={checkboxFormEnvioRef}
-                        onChange={() => handleCheckboxChange(true)}
-                      />
-                    </label>
-                  </div>
+                <div className="inline-flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
+                  <h2 className="font-medium">Envio a domicilio</h2>
+                  <label htmlFor="checkboxForm" className="relative flex items-center">
+                    <input className=" cursor-pointer size-4 rounded border-gray-300"
+                      type="checkbox"
+                      id="checkboxForm"
+                      ref={checkboxFormEnvioRef}
+                      onChange={() => handleCheckboxChange(true)}
+                    />
+                  </label>
+                </div>
                 <details className="  group [&_summary::-webkit-details-marker]:hidden">
                   <summary className="inline-flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
                     <h2 className="font-medium">Retiro en sucursal </h2>
@@ -272,13 +272,13 @@ const DataForm = () => {
                     </label>
                   </summary>
                   <div className="flex-wrap mt-2">
-                        <ul>
-                          <li className='text-white ms-1 font-light text-sm'>Bueno aires</li>
-                          <li className='text-white ms-1 font-light text-sm'>La plata</li>
-                          <li className='text-white ms-1 font-light text-sm'>avenida siempre viva</li>
-                          <li className='text-white ms-1 font-light text-sm'>742</li>
-                        </ul>
-                      </div>
+                    <ul>
+                      <li className='text-white ms-1 font-light text-sm'>Bueno aires</li>
+                      <li className='text-white ms-1 font-light text-sm'>La plata</li>
+                      <li className='text-white ms-1 font-light text-sm'>avenida siempre viva</li>
+                      <li className='text-white ms-1 font-light text-sm'>742</li>
+                    </ul>
+                  </div>
                 </details>
               </div>
               <span className="ml-2  text-white font-bold text-sm">
@@ -297,7 +297,7 @@ const DataForm = () => {
                 </span>
               </label>
               <div className="mt-4 flex justify-end border-t border-gray-200">
-                <button type="submit" className="text-white font-bold inline-flex items-center gap-2 rounded  mt-4 border-sky-500 bg-sky-600 px-8 py-3 text-dark hover:bg-sky-500 border-2 hover:border-sky-200  focus:outline-none focus:ring active:text-sky-500">
+                <button type="submit" className="inline-flex items-center gap-2 rounded  mt-4 border-sky-500 bg-sky-600 px-8 py-3 text-dark hover:bg-sky-500 border-2 hover:border-sky-200  focus:outline-none focus:ring active:text-sky-500">
                   <span className="text-sm font-medium"> Siguiente </span>
                   <svg className="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -308,8 +308,6 @@ const DataForm = () => {
           </form>
         </>
       ) : (<NoProducts />)}
-
-
     </>
   )
 }

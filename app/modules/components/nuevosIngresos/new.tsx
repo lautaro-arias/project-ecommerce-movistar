@@ -17,7 +17,7 @@ const News = () => {
                             <div className="border-b pb-12 md:pb-2 col-span-1 md:col-span-3">
                                 <p className="mb-2 -mt-1 text-sm font-normal text-gray-500">{item.fecha}</p>
                                 <h2 className="mb-2 text-xl font-extrabold leading-snug text-gray-800">
-                                    <span  className="cursor-pointer text-gray-900 hover:text-cyan-600">{item.name}</span>
+                                    <span className="cursor-pointer text-gray-900 hover:text-cyan-600">{item.name}</span>
                                 </h2>
                                 <p className="mb-3 text-sm font-normal text-gray-500">
                                     {item.description}
@@ -32,9 +32,9 @@ const News = () => {
                 <div className="pt-10 mt-10 border-t border-gray-200">
                     <ol className="flex justify-center gap-1 text-xs font-medium">
                         <li>
-                            <span   className="inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180">
+                            <span className="inline-flex size-8 items-center justify-center rounded border border-gray-100 bg-white text-gray-900 rtl:rotate-180">
                                 <span className="sr-only">Prev Page</span>
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3"viewBox="0 0 20 20"fill="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
                                     <path
                                         fillRule="evenodd"
                                         d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
@@ -44,7 +44,7 @@ const News = () => {
                             </span>
                         </li>
                         <li>
-                            <span  className="block size-8 rounded border border-blue-600 bg-blue-600 text-white text-center leading-8">
+                            <span className="block size-8 rounded border border-blue-600 bg-blue-600 text-white text-center leading-8">
                                 1
                             </span>
                         </li>

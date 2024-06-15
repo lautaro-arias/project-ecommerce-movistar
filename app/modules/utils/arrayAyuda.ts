@@ -1,4 +1,4 @@
-import ArraySvg from './arraySvg'
+import ArraySvg from './arraySvg';
 const ArrayAyuda = () => {
 
     const { svgAyuda } = ArraySvg();
@@ -87,9 +87,9 @@ const ArrayAyuda = () => {
             {name: "Buzón digital",item: "Envianos documentación desde donde estés." ,svg:svgAyuda[12]}
         ];
 
-  return {
+return {
     categorias,
     gestiones
-  }
+}
 }
 export default ArrayAyuda;

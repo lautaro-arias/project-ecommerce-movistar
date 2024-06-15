@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { useCart } from '../../handlers/addCart';
 import { CardImg2 } from '../home/cardImg';
 
 const Caracteristicas = () => {
     const { selectedProductsArray } = useCart();
-
     return (
         <>
             <section className="text-gray-600 body-font overflow-hidden">

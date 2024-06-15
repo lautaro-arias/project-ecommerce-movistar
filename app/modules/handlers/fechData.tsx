@@ -1,42 +1,46 @@
 'use client'
-import { useEffect, ReactNode, createContext,useContext,useState } from "react";
+import { useEffect, ReactNode, createContext, useContext, useState } from "react";
 import { DataContextProps } from "../model/dataContect";
 import { Products } from "../model/productModel";
 
-
+//Almacenamos la data del fect en estados y en localstore//
+//usamos esos estados para manejar la data
+//una ves que hizo el fech  , se guarda y no vuelve  a hacer el fech
+//no usamos las IMGS del fech 
 const DataContext = createContext<DataContextProps>(
-  {   datas:[],
-      all:[],
-      getProducts: () => {},
-      handleClickFilter: () => {},
-      active: '',
+  {
+    datas: [],
+    all: [],
+    getProducts: () => { },
+    handleClickFilter: () => { },
+    active: '',
   }
-); 
+);
 //
 
 export const DataProvider = ({ children }: { children: ReactNode }) => {
 
   const [datas, setDatas] = useState([]);
-  const [all,setAll] = useState([]);
+  const [all, setAll] = useState([]);
   const [active, setActive] = useState('');
 
 
   const getProducts = async () => {
-    const url ='https://dummyjson.com/products/category/smartphones'
+    const url = 'https://dummyjson.com/products/category/smartphones'
     try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        
-        }); 
-        const data = await response.json();
-        setDatas(data.products);
-        setAll(data.products)
-        localStorage.setItem('products', JSON.stringify(data.products.filter((product:any) => product.id !== 126)));
-    }catch (error) {
-        console.log(error);
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+
+      });
+      const data = await response.json();
+      setDatas(data.products);
+      setAll(data.products)
+      localStorage.setItem('products', JSON.stringify(data.products.filter((product: any) => product.id !== 126)));
+    } catch (error) {
+      console.log(error);
     }
   }
   useEffect(() => {
@@ -49,18 +53,18 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
-  const handleClickFilter = (brand:string) => {
-    if(brand === 'Todos'){
+  const handleClickFilter = (brand: string) => {
+    if (brand === 'Todos') {
       setAll(datas)
       setActive(brand);
-    }else if (brand === 'Samsung' || brand === 'Apple' || brand === 'Realme' || brand === 'Vivo' || brand === 'Oppo') {
-      const filteredProducts = datas.filter((product:Products) => product.brand === brand);
-        setAll(filteredProducts);
-        setActive(brand);
+    } else if (brand === 'Samsung' || brand === 'Apple' || brand === 'Realme' || brand === 'Vivo' || brand === 'Oppo') {
+      const filteredProducts = datas.filter((product: Products) => product.brand === brand);
+      setAll(filteredProducts);
+      setActive(brand);
     }
-    
+
   };
- 
+
 
   const contextValue: DataContextProps = {
     datas,
@@ -72,9 +76,9 @@ export const DataProvider = ({ children }: { children: ReactNode }) => {
 
   return (
     <>
-        <DataContext.Provider value={contextValue}>
-            {children}
-        </DataContext.Provider>
+      <DataContext.Provider value={contextValue}>
+        {children}
+      </DataContext.Provider>
     </>
   )
 };

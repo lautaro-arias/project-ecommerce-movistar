@@ -13,3 +13,13 @@
   .carousel-inner {
     animation: slide 36s infinite;
   }
+
+  html, body {
+    overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
+    width: 100%;
+    
+}
+
+
+
+

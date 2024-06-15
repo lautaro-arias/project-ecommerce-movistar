@@ -1,38 +1,39 @@
 'use client'
-import { ReactNode, createContext,useContext, useEffect, useState,useRef } from 'react'
+import { ReactNode, createContext, useContext, useEffect, useState, useRef } from 'react'
 import { CartContextProps } from '../model/cartContext';
 import { Products } from '../model/productModel';
 
-// CONTEXTO GLOBAL
+// CONTEXTO GLOBAL de cart
 const CartContext = createContext<CartContextProps>(
-    {   cartItemCount: 0, 
-        handleClickAddOne: () => {} ,
+    {
+        cartItemCount: 0,
+        handleClickAddOne: () => { },
         selectedProductsArray: [],
-        handleClickShowProduct: () => {},
-        addProductsCart:[],
-        handleClickAddProductCart: () => {},
-        showCart:false,
-        handleClickRemoveProduct: () => {},
-        modal:false,
-        handleQuantityChange: () => {},
+        handleClickShowProduct: () => { },
+        addProductsCart: [],
+        handleClickAddProductCart: () => { },
+        showCart: false,
+        handleClickRemoveProduct: () => { },
+        modal: false,
+        handleQuantityChange: () => { },
         productQuantities: [],
         sumarPrecios: 0,
         totalPrecios: 0,
         ids: 0,
-        handleClickId: () => {},
-        handleClickRemoveProductNav: () => {},
+        handleClickId: () => { },
+        handleClickRemoveProductNav: () => { },
     }
-); 
+);
 //
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-///// Incrementa 1 al carrito
+    ///// Incrementa 1 al carrito
     const [cartItemCount, setCartItemCount] = useState<number>(0);
     const [showCart, setShowCart] = useState<boolean>(false);//muestra el carro
-    const [modal,setModal] = useState<boolean>(false);//muestra el modal
-    
+    const [modal, setModal] = useState<boolean>(false);//muestra el modal
+
     const handleClickAddOne = (increment: boolean) => {
-        setCartItemCount(prevCount => (  increment ? prevCount + 1 : prevCount -1  ));
-        if(increment){
+        setCartItemCount(prevCount => (increment ? prevCount + 1 : prevCount - 1));
+        if (increment) {
             setTimeout(() => {
                 setModal(true);
             }, 1000);
@@ -43,91 +44,91 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     };
     ////
 
-///// Agrega al carro el producto    
+    ///// Agrega al carro el producto    
     const [addProductsCart, setAddProductsCart] = useState<Products[]>([]);
 
-    const handleClickAddProductCart = (product:Products) => {
-            setAddProductsCart(prevProducts => [...prevProducts, product]);
-            setShowCart(true);
+    const handleClickAddProductCart = (product: Products) => {
+        setAddProductsCart(prevProducts => [...prevProducts, product]);
+        setShowCart(true);
     };
     ////
-///// Elimina el elemento en el índice dado del cart
-    const handleClickRemoveProduct = (index:number ) => {
+    ///// Elimina el elemento en el índice dado del cart
+    const handleClickRemoveProduct = (index: number) => {
         const updatedProductsArray = [...addProductsCart];
-        
-            updatedProductsArray.splice(index,1); // Elimina el elemento en el índice dado
-            setAddProductsCart(updatedProductsArray);
 
-            if ( updatedProductsArray.length === 0) {
-                setShowCart(false); 
-            } 
+        updatedProductsArray.splice(index, 1); // Elimina el elemento en el índice dado
+        setAddProductsCart(updatedProductsArray);
+
+        if (updatedProductsArray.length === 0) {
+            setShowCart(false);
+        }
 
     };
     ///
-    // Elimina al salir del cart
-    const handleClickRemoveProductNav = (index:number ) => {
+    // Elimina al salir del carrito de compras
+    const handleClickRemoveProductNav = (index: number) => {
         const updatedProductsArray = [...addProductsCart];
 
         setTimeout(() => {
-        
-            updatedProductsArray.splice(index,1); // Elimina el elemento en el índice dado
+
+            updatedProductsArray.splice(index, 1); // Elimina el elemento en el índice dado
             setAddProductsCart(updatedProductsArray);
 
-            if ( updatedProductsArray.length === 0) {
-                setShowCart(false); 
-            } 
+            if (updatedProductsArray.length === 0) {
+                setShowCart(false);
+            }
 
         }, 2600);
     };
     //
 
-////Actualiza precio x cantiadad
+    ////Actualiza precio x cantiadad
     const [productQuantities, setProductQuantities] = useState(addProductsCart.map(() => 1));
-    const handleQuantityChange = (index:number, newQuantity: number) => {
+    const handleQuantityChange = (index: number, newQuantity: number) => {
         const newProductQuantities = [...productQuantities];
         newProductQuantities[index] = newQuantity;
         setProductQuantities(newProductQuantities);
     };
     //
 
-///Suma todos los precios con sus cantiadades
-        const sumarPrecios = (producto:any, cantidades:any) => {
-            const total = producto.reduce((acumulador:number, product:any, index:number) => {
+    ///Suma todos los precios con sus cantiadades
+    const sumarPrecios = (producto: any, cantidades: any) => {
+        const total = producto.reduce((acumulador: number, product: any, index: number) => {
 
-                const descuento = product.price * (product.discountPercentage / 100);
-                const precioFinal = product.price - descuento;
-                //const totalProducto = precioFinal * cantidades[index];
-            
-                // Redondear a dos decimales
-                return Math.round((acumulador + precioFinal) * 100) / 100;
+            const descuento = product.price * (product.discountPercentage / 100);
+            const precioFinal = product.price - descuento;
+            //const totalProducto = precioFinal * cantidades[index];
 
-            }, 0);
-        
-            return total;
-        };
-        const totalPrecios = sumarPrecios(addProductsCart, productQuantities);
-        //
-        useEffect(() => {
-            // Actualizar productQuantities cuando selectedProductsArray cambie
-            setProductQuantities(addProductsCart.map(() => 1));
-        }, [addProductsCart]);
-//////  
+            // Redondear a dos decimales
+            return Math.round((acumulador + precioFinal) * 100) / 100;
 
-///Almacenar los datos del producto seleccionado , 
-///y muestra su info al hacer click en img en el array y mostrarlo
+        }, 0);
+
+        return total;
+    };
+    const totalPrecios = sumarPrecios(addProductsCart, productQuantities);
+    //
+    useEffect(() => {
+        // Actualizar productQuantities cuando selectedProductsArray cambie
+        setProductQuantities(addProductsCart.map(() => 1));
+    }, [addProductsCart]);
+    //////  
+
+    ///Almacenar los datos del producto seleccionado , 
+    ///y muestra su info al hacer click en img en el array y mostrarlo
     const [selectedProductsArray, setSelectedProductsArray] = useState<Products[]>([]);
-    const handleClickShowProduct = (product:Products) => {
+    const handleClickShowProduct = (product: Products) => {
         setSelectedProductsArray([product]);
     };
 
-    const [ids,setIds] = useState<number>(0);
-    const handleClickId = (id:number) => {
+    const [ids, setIds] = useState<number>(0);
+    const handleClickId = (id: number) => {
         setIds(id)
     };
     /// 
 
     const contextValue: CartContextProps = {
-        cartItemCount, 
+        cartItemCount,
         handleClickAddOne,
         selectedProductsArray,
         handleClickShowProduct,
@@ -143,7 +144,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         ids,
         handleClickId,
         handleClickRemoveProductNav
-        
+
     };
 
     return (

@@ -1,9 +1,9 @@
 'use client'
-import { usePathname } from 'next/navigation'
-import ArrayNav from '@/app/modules/utils/arrayLinks'
-import Link from 'next/link'
-import React from 'react'
-import { useCart } from '@/app/modules/handlers/addCart'
+import { usePathname } from 'next/navigation';
+import ArrayNav from '@/app/modules/utils/arrayLinks';
+import Link from 'next/link';
+import React from 'react';
+import { useCart } from '@/app/modules/handlers/addCart';
 
 export const NavLink = () => {
     const { handleClickRemoveProductNav } = useCart()
@@ -47,7 +47,7 @@ export const NavLinkMovil = () => {
                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     {itemNav.map((item, index) => (
                         <Link href={item.url} key={index} className=' text-lg mt-4 text-gray-600 font-light border-b border-cyan-500 cursor-pointer hover:border-b ms-8 me-8 hover:border-cyan-400 hover:text-cyan-500'>
-                                {item.name}
+                            {item.name}
                         </Link>
 
                     ))}
@@ -55,8 +55,8 @@ export const NavLinkMovil = () => {
                 : <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                     {itemNav.map((item, index) => (
                         <a onClick={() => { handleClickRemoveProductNav(0) }} href={item.url} key={index} className={` ${pathname === item.url ? ' me-8 ms-8 mt-2 text-lg text-cyan-500 border-b border-cyan-400' : 'text-lg text-gray-600 font-light border-b border-white cursor-pointer hover:border-b ms-8 me-8 hover:border-cyan-400 hover:text-cyan-500 mt-2'} `}>
-                        {item.name}
-                    </a>
+                            {item.name}
+                        </a>
 
                     ))}
                 </ul>

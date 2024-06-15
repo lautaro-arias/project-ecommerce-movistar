@@ -13,7 +13,7 @@ const Categorias = () => {
                     </div>
                     <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                         {categorias.map((categoria, index) => (
-                            <div  key={index} className="block hover:shadow-cyan-200 hover:shadow-md  rounded-xl border border-gray-300 p-8  transition hover:border-cyan-600">
+                            <div key={index} className=" animate__animated animate__fadeIn  animate__delay-900ms block hover:shadow-cyan-200 hover:shadow-md  rounded-xl border border-gray-300 p-8  transition hover:border-cyan-600">
                                 <span className='inline-flex'>
                                     {categoria.svg}
                                     <h2 className=" mt-2 mb-4 ml-4 text-xl font-bold text-dark">{categoria.name}</h2>

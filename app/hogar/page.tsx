@@ -1,5 +1,5 @@
-import React from 'react'
-import Card from '../modules/components/hogar/card'
+import React from 'react';
+import Card from '../modules/components/hogar/card';
 
 const page = () => {
   return (
@@ -8,5 +8,4 @@ const page = () => {
     </>
   )
 }
-
-export default page
+export default page;

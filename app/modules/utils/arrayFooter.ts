@@ -1,4 +1,3 @@
-import React from 'react'
 
 const arrayFooter = () => {
     const footerItems = [
@@ -60,8 +59,8 @@ const arrayFooter = () => {
         
     ];
     
-  return {
+return {
     footerItems
-  }
+}
 }
 export default arrayFooter;
