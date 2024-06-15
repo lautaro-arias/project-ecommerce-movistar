@@ -6,6 +6,7 @@ import NoProducts from './noProducts';
 import ModalAddProduct from './modalAddProduct';
 import Link from 'next/link';
 import ArraysImg from '../../utils/arraysImg';
+import { CardImg } from '../home/cardImg';
 const Cart = () => {
   const {
     ids, addProductsCart, showCart, handleClickRemoveProduct, handleClickAddOne,
@@ -30,18 +31,7 @@ const Cart = () => {
                   <div key={index}>
                     <ul className="space-y-4">
                       <li className="flex items-center gap-4">
-                      {imgData ? (
-                          <div className=" ">
-                              <Image
-                                  width={100}
-                                  height={100}
-                                  className=" size-16 rounded object-cover"
-                                  src={imgData.img}
-                                  alt='celular'
-                              />
-                          </div>
-                        ) : null
-                    }
+                        <CardImg />
                         <div>
                           <h3 className="text-sm text-gray-900">{product.title}</h3>
                           <dl className="mt-0.5 space-y-px text-[10px] text-gray-600">

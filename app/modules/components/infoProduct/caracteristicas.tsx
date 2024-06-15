@@ -1,24 +1,19 @@
 import React from 'react'
 import { useCart } from '../../handlers/addCart';
 import { CardImg2 } from '../home/cardImg';
-import ArraysImg from '../../utils/arraysImg';
 
 const Caracteristicas = () => {
     const { selectedProductsArray } = useCart();
-    const { arrayImg } = ArraysImg();
-    const { ids } = useCart();
 
-    const imgData = arrayImg.find(img => img.id === ids);
     return (
         <>
             <section className="text-gray-600 body-font overflow-hidden">
                 <div className="container bg-white px-5 py-8 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-
                         <div className="lg:w-1/2 mx-auto  w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-                            {selectedProductsArray.map((product, index) => (
-                                <>
-                                    <h2 key={index} className="text-sm title-font text-gray-500 tracking-widest"></h2>
+                            {selectedProductsArray.map((product, indexSelected) => (
+                                <React.Fragment key={indexSelected}>
+                                    <h2 className="text-sm title-font text-gray-500 tracking-widest"></h2>
                                     <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{product.title}</h1>
                                     <p>{product.description}</p>
                                     <div className="flex mb-4">
@@ -44,17 +39,14 @@ const Caracteristicas = () => {
                                         <span className="text-gray-500">Garantia</span>
                                         <span className="ml-auto text-gray-900">{product.warrantyInformation}</span>
                                     </div>
-                                </>
+                                </React.Fragment>
                             ))}
-                    <CardImg2/>
-
+                            <CardImg2 />
                         </div>
-
                     </div>
                 </div>
             </section>
         </>
     )
 }
-
-export default Caracteristicas
+export default Caracteristicas;

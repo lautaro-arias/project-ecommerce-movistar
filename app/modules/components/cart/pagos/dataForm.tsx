@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import { useCart } from '@/app/modules/handlers/addCart';
 import NoProducts from '../noProducts';
 import { useForm } from '@/app/modules/handlers/form';
@@ -9,7 +9,7 @@ const DataForm = () => {
   const {
     handleSubmit, emailRef, nombreRef, apellidoRef, dniRef, celularRef,
     calleRef, alturaRef, pisoRef, departamentoRef, localidadRef, provinciaRef,
-    codigoPostalRef, checkboxFormEnvioRef, checkboxFormRetiroRef, handleCheckboxChange, handleChange
+    codigoPostalRef, checkboxFormEnvioRef, checkboxFormRetiroRef, handleCheckboxChange, 
   } = useForm();
 
   return (
@@ -297,7 +297,7 @@ const DataForm = () => {
                 </span>
               </label>
               <div className="mt-4 flex justify-end border-t border-gray-200">
-                <button type="submit" className="inline-flex items-center gap-2 rounded  mt-4 border-sky-500 bg-sky-600 px-8 py-3 text-dark hover:bg-sky-500 border-2 hover:border-sky-200  focus:outline-none focus:ring active:text-sky-500">
+                <button type="submit" className="text-white font-bold inline-flex items-center gap-2 rounded  mt-4 border-sky-500 bg-sky-600 px-8 py-3 text-dark hover:bg-sky-500 border-2 hover:border-sky-200  focus:outline-none focus:ring active:text-sky-500">
                   <span className="text-sm font-medium"> Siguiente </span>
                   <svg className="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

@@ -1,10 +1,8 @@
 import React from 'react';
-import ayudaImg2 from '../../../../public/assets/ayudaImg2.jpg'
-
+import ayudaImg2 from '../../../../public/assets/ayudaImg2.jpg';
 import Image from 'next/image';
 const Info = () => {
   return (
-    <>
       <section className="text-gray-600 body-font py-16 mt-24 bg-white">
         <div className="container  mx-auto flex mt-6 border border-gray-200 rounded-md shadow-2xl md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
@@ -21,7 +19,6 @@ const Info = () => {
           </div>
         </div>
       </section>
-    </>
   )
 }
 export default Info;
