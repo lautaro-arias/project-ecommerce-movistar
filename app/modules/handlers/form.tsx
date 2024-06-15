@@ -19,12 +19,14 @@ const FormContext = createContext<FormContextProps>({
   checkboxFormRetiroRef: { current: null },
   validated: false,
   isReadyShow: false,
+  value: '',
   formData: { email: "",nombre: "",apellido: "",dni: "",celular: "",calle: "",altura: "",
               piso: "",departamento: "",localidad: "",provincia: "",codigoPostal: "",
               checkboxFormEnvio: false,checkboxFormRetiro: false,
             },
   handleSubmit: () => {},
   handleCheckboxChange:() => {},
+  handleChange: () => {},
   handleClick:() => {},
   handleClickPago:() => {},
   isPago: false
@@ -33,9 +35,11 @@ const FormContext = createContext<FormContextProps>({
 export const FormProvider = ({ children }: { children: ReactNode }) => {
   // validated: valida si el formulario esta bien +
   // isReadyShow: valida si hay un check marcado antes de ir a pago
+  // value : validacion visual usuario, si el input contiene caracteres//
   //isPago: valida si el usuario ya ha pagado
   const [validated, setValidated] = useState(false);
   const [isReadyShow, setIsReadyShow] = useState(false);
+  const [value, setValue] = useState('');
   const [isPago, setIsPago] = useState(false);
   
   //alamcenamos los datos de los refs
@@ -63,7 +67,14 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
   //
 
   // verifica que los inputs no esten vacios o esten en el formato correcto
-
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+  //
 
   // obtenermos los datos de los ref , los guardamos y validamos el formulario
   const handleSubmit = (event: React.FormEvent) => {
@@ -93,7 +104,6 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
           setValidated(true);
           setIsReadyShow(true);
           setFormData(data);
-            
 
         }else{
           setIsReadyShow(false);
@@ -138,11 +148,9 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
   //
 
   const handleClickPago = (e: React.MouseEvent<HTMLButtonElement>) => {
-      setIsPago(true);  
-      setTimeout(() => {
-        window.location.reload();
-      },5000)
-    
+    e.preventDefault();
+    setIsPago(preev => !preev);
+    console.log(isPago)
   }
   
 
@@ -163,9 +171,11 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     checkboxFormRetiroRef,
     validated,
     isReadyShow,
+    value,
     formData,
     handleSubmit,
     handleCheckboxChange,
+    handleChange,
     handleClick,
     handleClickPago,
     isPago
@@ -181,5 +191,3 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
 export const useForm = () => {
   return useContext(FormContext);
 };
-
-

@@ -16,5 +16,4 @@ export interface CartContextProps {
     sumarPrecios                :   number | any ;
     ids                         :   number ;    
     handleClickId               :   (id: number) => void;
-    handleClickRemoveProductNav :   (index: number) => void;
 }

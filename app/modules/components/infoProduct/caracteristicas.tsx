@@ -16,9 +16,9 @@ const Caracteristicas = () => {
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
 
                         <div className="lg:w-1/2 mx-auto  w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
-                            {selectedProductsArray.map((product, indexSelected) => (
-                                <React.Fragment key={indexSelected}>
-                                    <h2 className="text-sm title-font text-gray-500 tracking-widest"></h2>
+                            {selectedProductsArray.map((product, index) => (
+                                <>
+                                    <h2 key={index} className="text-sm title-font text-gray-500 tracking-widest"></h2>
                                     <h1 className="text-gray-900 text-3xl title-font font-medium mb-4">{product.title}</h1>
                                     <p>{product.description}</p>
                                     <div className="flex mb-4">
@@ -44,9 +44,9 @@ const Caracteristicas = () => {
                                         <span className="text-gray-500">Garantia</span>
                                         <span className="ml-auto text-gray-900">{product.warrantyInformation}</span>
                                     </div>
-                                </React.Fragment>
+                                </>
                             ))}
-                            <CardImg2 />
+                    <CardImg2/>
 
                         </div>
 

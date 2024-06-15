@@ -7,13 +7,15 @@ import ArraysImg from '../../utils/arraysImg';
 import Image from 'next/image';
 import Link from 'next/link';
 
+// SE ESNCUENTRA EN NOSHOW PARA NO MOSTRARSE EN OFERTAS //
 
 const CardsProduct = () => {
-    const { all } = useData();
+    const { datas, all } = useData();
     const { handleClickShowProduct, handleClickId } = useCart();
     const { arrayImg } = ArraysImg();
 
     return (
+
         <>
             <div className="flex flex-col flex-1 w-0 overflow-hidden">
                 <main className="relative flex-1 overflow-y-auto focus:outline-none">
@@ -24,11 +26,12 @@ const CardsProduct = () => {
                         <div className="px-4 mx-auto max-w-7xl sm:px-6 md:px-8">
                             <Filter />
                             <div className="py-4">
-                                <article className='  grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+                                <article className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
                                     {all.map((product: any, index: any) => {
                                         const imgData = arrayImg.find(img => img.id === product.id);
+
                                         return (
-                                            <div key={index} className="bg-white rounded-lg border  border-white group block hover:border hover:border-gray-200">
+                                            <div key={index} className="bg-white rounded-md group block">
                                                 {imgData && (
                                                     <div className="relative h-[450px] md:h-[350px] overflow-hidden">
                                                         <Link onClick={() => { handleClickShowProduct(product), handleClickId(product.id) }} href="/infoProduct">
@@ -36,20 +39,21 @@ const CardsProduct = () => {
                                                                 width={900}
                                                                 height={900}
                                                                 key={index}
-                                                                className="absolute  rounded-lg inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"
+                                                                className="absolute   inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"
                                                                 src={imgData.img}
                                                                 alt='celular'
                                                             />
                                                             <Image
                                                                 width={900}
                                                                 height={900}
-                                                                className="absolute rounded-lg inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100"
+                                                                className="absolute  inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100"
                                                                 src={imgData.img2}
                                                                 alt='celular'
                                                             />
                                                         </Link>
                                                     </div>
                                                 )}
+
                                                 <div className="mt-2 pb-10 text-center rounded-b-lg px-20">
                                                     <dl>
                                                         <div>

@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import { useCart } from '@/app/modules/handlers/addCart';
 import NoProducts from '../noProducts';
 import { useForm } from '@/app/modules/handlers/form';
@@ -9,7 +9,7 @@ const DataForm = () => {
   const {
     handleSubmit, emailRef, nombreRef, apellidoRef, dniRef, celularRef,
     calleRef, alturaRef, pisoRef, departamentoRef, localidadRef, provinciaRef,
-    codigoPostalRef, checkboxFormEnvioRef, checkboxFormRetiroRef, handleCheckboxChange, 
+    codigoPostalRef, checkboxFormEnvioRef, checkboxFormRetiroRef, handleCheckboxChange, handleChange
   } = useForm();
 
   return (

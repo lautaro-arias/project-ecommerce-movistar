@@ -20,7 +20,6 @@ const CartContext = createContext<CartContextProps>(
         totalPrecios: 0,
         ids: 0,
         handleClickId: () => {},
-        handleClickRemoveProductNav: () => {},
     }
 ); 
 //
@@ -54,32 +53,15 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 ///// Elimina el elemento en el índice dado del cart
     const handleClickRemoveProduct = (index:number ) => {
         const updatedProductsArray = [...addProductsCart];
-        
-            updatedProductsArray.splice(index,1); // Elimina el elemento en el índice dado
-            setAddProductsCart(updatedProductsArray);
 
-            if ( updatedProductsArray.length === 0) {
-                setShowCart(false); 
-            } 
+        updatedProductsArray.splice(index,1); // Elimina el elemento en el índice dado
+        setAddProductsCart(updatedProductsArray);
 
+        if ( updatedProductsArray.length === 0) {
+            setShowCart(false); 
+        } 
     };
     ///
-    // Elimina al salir del cart
-    const handleClickRemoveProductNav = (index:number ) => {
-        const updatedProductsArray = [...addProductsCart];
-
-        setTimeout(() => {
-        
-            updatedProductsArray.splice(index,1); // Elimina el elemento en el índice dado
-            setAddProductsCart(updatedProductsArray);
-
-            if ( updatedProductsArray.length === 0) {
-                setShowCart(false); 
-            } 
-
-        }, 2600);
-    };
-    //
 
 ////Actualiza precio x cantiadad
     const [productQuantities, setProductQuantities] = useState(addProductsCart.map(() => 1));
@@ -142,7 +124,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         totalPrecios,
         ids,
         handleClickId,
-        handleClickRemoveProductNav
         
     };
 

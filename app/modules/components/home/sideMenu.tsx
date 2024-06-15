@@ -1,12 +1,12 @@
 'use client'
 import React from 'react';
 import ArraySideMenu from '../../utils/arraySideMenu';
+import {NoShow} from './noShow';
 import { useData } from '../../handlers/fechData';
-import CardsProduct from './cardsProduct';
 
 const SideMenu = () => {
     const { itemSideMenu } = ArraySideMenu();
-    const { handleClickFilter, active } = useData();
+    const { handleClickFilter,active } = useData(); 
 
     return (
         <>
@@ -34,11 +34,11 @@ const SideMenu = () => {
                                                     {item.svg}
                                                     <span className="ml-4 text-lg"> {item.title}</span>
                                                 </a>
-                                                {item.options.map((option, index) => (
-                                                    <a onClick={() => handleClickFilter(option.name)} className={`m-2 btn ${active === option.name ? 'btn-active bg-white border-gray-200 text-sky-600' : ''}   ml-4 font-light hover:text-cyan-600  `} key={index}>
-                                                        {option.name}
-                                                    </a>
-                                                ))}
+                                                    {item.options.map((option, index) => (
+                                                        <a onClick={() =>  handleClickFilter(option.name)}  className={`m-2 btn ${ active === option.name  ? 'btn-active bg-white border-gray-200 text-sky-600' : ''}   ml-4 font-light hover:text-cyan-600  ` } key={index}>
+                                                            {option.name}
+                                                        </a>
+                                                    ))}
                                             </li>
                                         ))}
                                     </ul>
@@ -48,8 +48,8 @@ const SideMenu = () => {
                         </div>
                     </div>
                 </div>
-                <CardsProduct />
-            </div>
+                <NoShow/>
+                </div>
         </>
     )
 }

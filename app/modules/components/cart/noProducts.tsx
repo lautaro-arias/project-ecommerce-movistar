@@ -17,7 +17,7 @@ const NoProducts = () => {
                                     <Link href="/" className="px-5 py-4 text-base font-medium text-center b text-white transition duration-500 ease-in-out transform bg-sky-800 lg:px-10 rounded-xl hover:bg-sky-600  focus:outline-none focus:ring-2 shadow-lg focus:ring-offset-2 focus:ring-blue-500">Ver productos</Link>
                                 </div>
                                 <div className="mt-4 rounded-lg sm:mt-4 sm:ml-3">
-                                    <Link  href="/nuevosIngresos" className="items-center block px-5 lg:px-10 py-3.5 text-base font-medium text-center text-sky-700  bg-white hover:shadow-xl transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">Ver nuevos ingresos</Link>
+                                    <Link  href="/ofertas" className="items-center block px-5 lg:px-10 py-3.5 text-base font-medium text-center text-sky-700  bg-white hover:shadow-xl transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">Ver ofertas</Link>
                                 </div>
                             </div>
                         </div>
