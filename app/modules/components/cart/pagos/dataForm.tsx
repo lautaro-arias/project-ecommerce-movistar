@@ -239,7 +239,6 @@ const DataForm = () => {
                       Codigo postal <span className='text-red-400 text-xl'>*</span>
                     </span>
                   </label>
-
                 </div>
               </div>
               <h4 className="text-white font-bold pt-8 text-md">Envio / Retiro</h4>
@@ -247,7 +246,7 @@ const DataForm = () => {
                 <div className="inline-flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
                   <h2 className="font-medium">Envio a domicilio</h2>
                   <label htmlFor="checkboxForm" className="relative flex items-center">
-                    <input className=" cursor-pointer size-4 rounded border-gray-300"
+                    <input className="bg-white cursor-pointer size-4 rounded border-gray-300"
                       type="checkbox"
                       id="checkboxForm"
                       ref={checkboxFormEnvioRef}
@@ -262,7 +261,7 @@ const DataForm = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
                     <label htmlFor="checkboxForm" className="relative flex items-center">
-                      <input className="  cursor-pointer size-4 rounded border-gray-300"
+                      <input className=" bg-white cursor-pointer size-4 rounded border-gray-300"
                         type="checkbox"
                         id="checkboxForm"
                         ref={checkboxFormRetiroRef}
@@ -286,7 +285,7 @@ const DataForm = () => {
                 Si no marca ninguna casilla se tomara como retiro en sucursal
               </span>
               <label htmlFor="checkboxForm" className=" mt-5 relative flex items-center">
-                <input className=" cursor-pointer size-4 rounded border-gray-300"
+                <input className=" bg-white cursor-pointer size-4 rounded border-gray-300"
                   type="checkbox"
                   id="checkboxForm"
                   required
@@ -297,7 +296,7 @@ const DataForm = () => {
                 </span>
               </label>
               <div className="mt-4 flex justify-end border-t border-gray-200">
-                <button type="submit" className="inline-flex items-center gap-2 rounded  mt-4 border-sky-500 bg-sky-600 px-8 py-3 text-dark hover:bg-sky-500 border-2 hover:border-sky-200  focus:outline-none focus:ring active:text-sky-500">
+                <button type="submit" className="inline-flex items-center gap-2 rounded bg-sky-400 mt-4 border-sky-300 md:border-sky-500  md:bg-sky-600 px-8 py-3 text-white md:hover:bg-sky-500 border-2 hover:border-sky-200  focus:outline-none focus:ring active:text-sky-500">
                   <span className="text-sm font-medium"> Siguiente </span>
                   <svg className="size-5 rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

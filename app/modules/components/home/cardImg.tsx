@@ -47,6 +47,8 @@ export const CardImg = () => {
 export const CardImg2 = () => {
     const { arrayImg } = ArraysImg();
     const { ids } = useCart();
+    const pathname = usePathname()
+
 
     const imgData = arrayImg.find(img => img.id === ids);
     return (
@@ -60,13 +62,24 @@ export const CardImg2 = () => {
                         src={imgData.img}
                         alt='celular'
                     />
-                    <Image
+                    {pathname !== '/infoProduct' ? (
+                        <Image
+                            width={900}
+                            height={1200}
+                            className="transition-transform duration-300 transform scale-100 hover:scale-110 object-cover object-no-repeat"
+                            src={imgData.img2}
+                            alt='celular'
+                        />
+                    ) : 
+                        <Image
                         width={900}
                         height={1200}
-                        className="transition-transform duration-300 transform scale-100 hover:scale-110 object-cover object-no-repeat"
+                        className="hidden md:block transition-transform duration-300 transform scale-100 hover:scale-110 object-cover object-no-repeat"
                         src={imgData.img2}
                         alt='celular'
-                    />
+                        />
+                    }
+
                 </div>
             ) : null
             }
