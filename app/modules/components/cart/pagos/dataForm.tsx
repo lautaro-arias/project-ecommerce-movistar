@@ -243,9 +243,9 @@ const DataForm = () => {
               </div>
               <h4 className="text-white font-bold pt-8 text-md">Envio / Retiro</h4>
               <div className="space-y-4 pt-4">
-                <div className="inline-flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
-                  <h2 className="font-medium">Envio a domicilio</h2>
-                  <label htmlFor="checkboxForm" className="relative flex items-center">
+                <div className="inline-flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-white p-4 text-white">
+                  <h2 className="font-medium text-gray-950">Envio a domicilio</h2>
+                  <label htmlFor="checkboxForm" className="bg-white relative flex items-center">
                     <input className="bg-white cursor-pointer size-4 rounded border-gray-300"
                       type="checkbox"
                       id="checkboxForm"
@@ -255,12 +255,12 @@ const DataForm = () => {
                   </label>
                 </div>
                 <details className="  group [&_summary::-webkit-details-marker]:hidden">
-                  <summary className="inline-flex cursor-pointer items-center justify-between gap-1.5 rounded-lg bg-gray-50 p-4 text-gray-900">
-                    <h2 className="font-medium">Retiro en sucursal </h2>
-                    <svg className="size-5 shrink-0 transition duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <summary className="bg-white  inline-flex cursor-pointer items-center justify-between gap-1.5 rounded-lg  p-4 text-white">
+                    <h2 className="font-medium text-gray-950">Retiro en sucursal </h2>
+                    <svg className="size-5 shrink-0 bg-white text-gray-950 transition duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                     </svg>
-                    <label htmlFor="checkboxForm" className="relative flex items-center">
+                    <label htmlFor="checkboxForm" className="bg-white  relative flex items-center">
                       <input className=" bg-white cursor-pointer size-4 rounded border-gray-300"
                         type="checkbox"
                         id="checkboxForm"

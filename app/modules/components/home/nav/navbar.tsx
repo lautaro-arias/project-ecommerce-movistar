@@ -7,9 +7,9 @@ const Navbar = () => {
             <div className="navbar justify-center bg-white border-b border-gray-200 shadow-lg">
                 <div className="navbar-start md:ms-20 xl:ps-80  ">
                     <details className="dropdown group ">
-                        <summary tabIndex={0} role="button" className=" btn btn-ghost  md:hidden">
-                        <h3 className=" font-light md:block">Menu</h3>
-                        <svg className="size-5 shrink-0 transition duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <summary tabIndex={0} role="button" className="text-gray-800 btn btn-ghost  md:hidden">
+                        <h3 className=" font-light text-gray-700 md:block">Menu</h3>
+                        <svg className="size-5 shrink-0 text-gray-950 transition duration-300 group-open:-rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                             </svg>
                         </summary>
