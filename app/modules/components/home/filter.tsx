@@ -20,10 +20,10 @@ const Filter = () => {
                         <li> <a onClick={() => handleClickFilter('Apple')} className={`m-2 btn ${active === 'Apple' ? 'btn-active bg-white border-gray-200 shadow-md text-sky-600' : ''}  bg-gray-100 border-gray-200 m-2 ml-4 font-light hover:text-cyan-600  `} >
                             Apple</a>
                         </li>
-                        <li> <a onClick={() => handleClickFilter('Samsung')} className={`m-2 btn ${active === 'Samsung' ? 'btn-active bg-white border-gray-200 shadow-md text-sky-600' : ''}  m-2  ml-4 font-light hover:text-cyan-600  `} >
+                        <li> <a onClick={() => handleClickFilter('Samsung')} className={`m-2 btn ${active === 'Samsung' ? 'btn-active bg-white border-gray-200 shadow-md text-sky-600' : ''} bg-gray-100 border-gray-200 m-2  ml-4 font-light hover:text-cyan-600  `} >
                             Samsung</a>
                         </li>
-                        <li> <a onClick={() => handleClickFilter('Realme')} className={`m-2 btn ${active === 'Realme' ? 'btn-active bg-white border-gray-200  text-sky-600' : ''}  bg-gray-100 border-gray-200 m-2 ml-4 font-light hover:text-cyan-600  `} >
+                        <li> <a onClick={() => handleClickFilter('Realme')} className={`m-2 btn ${active === 'Realme' ? 'btn-active bg-white border-gray-200 shadow-md  text-sky-600' : ''}  bg-gray-100 border-gray-200 m-2 ml-4 font-light hover:text-cyan-600  `} >
                             Realme</a>
                         </li>
                         <li> <a onClick={() => handleClickFilter('Vivo')} className={`m-2 btn ${active === 'Vivo' ? 'btn-active bg-white border-gray-200 shadow-md text-sky-600' : ''}  bg-gray-100 border-gray-200 m-2  ml-4 font-light hover:text-cyan-600  `} >
